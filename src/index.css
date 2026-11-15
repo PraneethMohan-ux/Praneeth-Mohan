@@ -1,0 +1,251 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ink: #07070a;
+  --color-ink-2: #0e0e13;
+  --color-ink-3: #16161d;
+  --color-crimson: #e5132b;
+  --color-crimson-2: #ff3d5a;
+  --color-bone: #f4f1ec;
+  --color-mist: #a7a6ad;
+  --color-smoke: #6d6c75;
+  --font-display: 'Bebas Neue', 'Oswald', Impact, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --ease-cine: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  color-scheme: dark;
+  --gutter: clamp(16px, 4vw, 56px);
+}
+
+:root.light-theme {
+  color-scheme: light;
+  --color-ink: #f4f1ec;
+  --color-ink-2: #ffffff;
+  --color-ink-3: #e8e4de;
+  --color-bone: #17171b;
+  --color-mist: #55545b;
+  --color-smoke: #77767d;
+}
+
+.light-theme .intro-reel,
+.light-theme .opening-sequence {
+  --color-ink: #07070a;
+  --color-ink-2: #0e0e13;
+  --color-ink-3: #16161d;
+  --color-bone: #f4f1ec;
+  --color-mist: #a7a6ad;
+  --color-smoke: #6d6c75;
+}
+
+.light-theme .intro-reel .glass {
+  background: rgba(14, 14, 19, 0.78);
+  border-color: rgba(244, 241, 236, 0.18);
+}
+
+.light-theme .about-portrait {
+  --color-bone: #f4f1ec;
+  --color-mist: #a7a6ad;
+  --color-smoke: #6d6c75;
+}
+
+html {
+  position: relative;
+  background: var(--color-ink);
+  -webkit-text-size-adjust: 100%;
+  transition: background-color 500ms ease, color 500ms ease;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  transition: background-color 500ms ease, color 500ms ease;
+}
+
+.light-theme .glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.56));
+  border-color: rgba(23, 23, 27, 0.14);
+}
+
+.light-theme .team-member-card {
+  background:
+    radial-gradient(100% 80% at 90% 0%, rgba(18, 120, 91, 0.16), transparent 65%),
+    linear-gradient(145deg, #ffffff, #e8efed) !important;
+  border-color: rgba(23, 54, 47, 0.16);
+  box-shadow: 0 18px 50px rgba(28, 45, 40, 0.1);
+}
+
+.light-theme .team-member-ghost {
+  color: rgba(19, 55, 46, 0.055);
+}
+
+.light-theme .team-member-meta {
+  color: #5e6865;
+  border-color: rgba(23, 54, 47, 0.22);
+}
+
+.light-theme .team-member-role {
+  color: #087a59;
+}
+
+.light-theme .team-member-link {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(23, 54, 47, 0.24);
+}
+
+.light-theme .vitacode-card {
+  background: linear-gradient(145deg, #ffffff, #f3f6f4);
+  border-color: rgba(23, 54, 47, 0.16);
+  box-shadow: 0 12px 32px rgba(28, 45, 40, 0.08);
+}
+
+.light-theme .vitacode-inset {
+  background: rgba(23, 54, 47, 0.045);
+  border-color: rgba(23, 54, 47, 0.14);
+}
+
+.light-theme .vitacode-logo-frame {
+  background: #f0efea;
+  border-color: rgba(23, 54, 47, 0.16);
+}
+
+.light-theme .vitacode-clause {
+  background: linear-gradient(145deg, #f1f8f3, #ffffff);
+  border-color: rgba(8, 122, 89, 0.24);
+  box-shadow: 0 12px 32px rgba(28, 45, 40, 0.06);
+}
+
+.light-theme .vitacode-accent {
+  color: #087a59;
+}
+
+.light-theme .achievement-card {
+  background: radial-gradient(120% 80% at 50% 0%, #fff9e9, #ffffff 70%) !important;
+  box-shadow: 0 10px 32px rgba(56, 45, 20, 0.08), 0 0 0 1px rgba(147, 111, 36, 0.2);
+}
+
+.light-theme .award-accent {
+  color: #805d16;
+}
+
+.light-theme .poster-backdrop {
+  background: linear-gradient(145deg, #f7fafc, #e4ecf2) !important;
+}
+
+.light-theme .poster-vignette {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.24) 72%, transparent) !important;
+}
+
+.light-theme .resume-sheet {
+  background: linear-gradient(180deg, #ffffff, #f5f3ef) !important;
+  box-shadow: 0 12px 42px rgba(32, 30, 25, 0.08), 0 0 0 1px rgba(32, 30, 25, 0.1);
+}
+
+.light-theme .grain {
+  opacity: 0.025;
+}
+
+::selection {
+  background: var(--color-crimson);
+  color: white;
+}
+
+.gutter {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* Film grain — a single fixed layer, cheap and subtle */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 90;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  contain: strict;
+}
+
+/* Hide scrollbars on horizontal rails while keeping them scrollable */
+.rail {
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom cursor: hide the native one only when ours is active */
+.has-custom-cursor,
+.has-custom-cursor a,
+.has-custom-cursor button,
+.has-custom-cursor [role='button'] {
+  cursor: none;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(244, 241, 236, 0.28);
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+.focus-ring:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-crimson-2);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.light-streak {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 90, 110, 0.9), transparent);
+  filter: blur(0.4px);
+  animation: streak 7s var(--ease-cine) infinite;
+  opacity: 0;
+}
+@keyframes streak {
+  0% { transform: translateX(-40%) scaleX(0.4); opacity: 0; }
+  15% { opacity: 0.9; }
+  45% { transform: translateX(40%) scaleX(1); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #f4f1ec 0%, #f4f1ec 40%, #ff8a9a 50%, #f4f1ec 60%, #f4f1ec 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain,
+  .light-streak,
+  .shimmer-text {
+    animation: none !important;
+  }
+  .light-streak {
+    display: none;
+  }
+}
